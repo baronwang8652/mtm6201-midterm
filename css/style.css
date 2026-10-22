@@ -1,0 +1,455 @@
+/**************************************
+ CSS Variables and Global Styles
+ **************************************/
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gold: #d69e3d;
+    --color-gold-dark: #966f2c;
+    --color-bg: #f3f0e9;
+
+    --font-heading: "Lato", sans-serif;
+    --font-body: "Karla", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-black);
+    background-color: var(--color-bg);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+}
+
+h1 { font-size: 2.027rem; }
+h2 { font-size: 1.802rem; }
+h3 { font-size: 1.424rem; }
+p  { font-size: 1rem; }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/**************************************
+ Wrapper, eyebrow and button styles
+ **************************************/
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.eyebrow {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+}
+
+/* button styles */
+.btn-light,
+.btn-outline,
+.btn-dark {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 2px solid transparent;
+    font-family: var(--font-body);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    /* I asked AI where the transition should be written. I decided to put it in the buttons' original state, so the effect applies both when the mouse moves in and when it moves out. */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.1s ease;
+
+}
+
+/* white background color button styles */
+.btn-light {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+/* no background color button styles */
+.btn-outline {
+    border: 2px solid var(--color-white);
+    color: var(--color-white);
+}
+
+/* black background color button styles */
+.btn-dark {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+/* White button with black text: on hover or focus, the background turns gold and the text turns white. */
+.btn-light:hover,
+.btn-light:focus {
+    background-color: var(--color-gold);
+    color: var(--color-white);
+}
+
+/* Transparent button with white text: on hover or focus, the background turns white and the text turns black. */
+/* I asked AI whether I only needed to write hover. It suggested also adding focus, because without focus, keyboard users would not see the effect. */
+.btn-outline:hover,
+.btn-outline:focus {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+/* Black button with white text: on hover or focus, the background turns gold and the border turns gold. */
+.btn-dark:hover,
+.btn-dark:focus {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+.btn-light:active,
+.btn-outline:active,
+.btn-dark:active {
+    transform: scale(0.96);
+}
+
+/**************************************
+ header styles
+ **************************************/
+
+.header {
+    background-color: var(--color-black);
+    padding: 1.5rem 0;
+}
+
+.header-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1.5rem;
+}
+
+.nav-list {
+    display: flex;
+    gap:2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+    color: var(--color-gold);
+}
+
+.hero {
+    /* Add a semi-transparent black overlay to the background image */ 
+    /* I asked AI how to make the background image look semi-transparent. It suggested using linear-gradient to add a semi-transparent overlay on top of the background image. */    
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../images/hero-background.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.hero p {
+    max-width: 40rem;
+    margin: 0 auto 2rem;
+}
+
+/**************************************
+ welcome gallery styles
+ **************************************/
+
+.welcome {
+    padding: 4rem 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery-main {
+    grid-column: span 2;
+}
+
+/**************************************
+ features section styles
+ **************************************/
+
+.features {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.features-list {
+    display: grid;
+    gap: 3rem;
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+}
+
+.feature img {
+    width: 7.5rem;
+    margin: 0 auto 1rem;
+}
+
+/**************************************
+ banner section styles
+ **************************************/
+
+.banner {
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    /* In the CSS, the path has to go back up one level first, otherwise the images folder can't be found. */
+    url("../images/coffee-shop.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    text-align: center; 
+    padding: 4rem 0;
+}
+
+.banner-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+
+/**************************************
+ about us section styles
+ **************************************/
+
+.about {
+    text-align:left;
+    padding: 4rem 0;
+}
+
+.about-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+}
+
+/**************************************
+ testimonial section styles
+ **************************************/
+
+.testimonials {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 4rem 0;
+}
+
+.testimonials-list {
+    display: grid;
+    gap: 2rem;
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 25rem;
+    padding: 1.5rem;
+    background-size: cover;
+    background-position: center top;
+}
+
+.testimonial-first {
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/testimonial-1.jpeg");
+}
+
+.testimonial-second {
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/testimonial-2.jpeg");
+}
+
+.testimonial-third {
+    background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/testimonial-3.jpeg");
+}
+
+.blockquote {
+    margin: 0 0 0.5rem;
+}
+
+.testimonial-name {
+    margin: 0;
+    color: var(--color-gold);
+    text-transform: uppercase;
+}
+
+/**************************************
+ footer styles
+ **************************************/
+
+.footer {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+
+
+/**************************************
+ Tablet styles (768px and up)
+ **************************************/
+
+@media (min-width: 768px) {
+
+    h1 { font-size: 2.986rem; }
+    h2 { font-size: 2.488rem; }
+    h3 { font-size: 1.728rem; }
+
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* I asked AI how to arrange the gallery images in a 4-column layout with the main image spanning 2 rows, and this is what it suggested */
+    .gallery-main {
+        grid-row: span 2;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* I asked AI how to place the third feature on the row below and centre it. It suggested using flex-wrap; this is my modified code. */
+    .features-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 2rem;
+    }
+
+    /* I asked AI how to get the feature layout right. It suggested that, because a 2rem gap is already set, the flex-basis needs to be adjusted so the items don't wrap onto a new line on tablet. */
+    .feature {
+        flex-basis: calc(50% - 1rem);
+    }
+
+    .banner-inner {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .banner-block {
+        flex: 1;
+        text-align: center;
+    }
+
+    .about-inner {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* I want the about image and text to share the layout evenly, so I used flex: 1, which lets each of them take up half of the space.
+    The reason for adding min-width: 0 is to tell the browser the image can be any width, so the width: 100% setting no longer stops the image from shrinking. */
+    .about-img {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .about-text {
+        flex: 1;
+        text-align: left;
+    }
+
+    .testimonials-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/**************************************
+ Desktop styles (1100px and up)
+ **************************************/
+
+@media (min-width: 1100px) {
+
+    h1 { font-size: 3.815rem; }
+    h2 { font-size: 3.052rem; }
+    h3 { font-size: 1.953rem; }
+
+    .header-inner {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* I want the three features to share the layout evenly, so the 4rem of gap in between has to be subtracted first, and then the rest is divided into 3 equal parts. */
+    .feature {
+        flex-basis: calc((100% - 4rem) / 3);
+    }
+
+}
+
+/**************************************
+ hides the skip link by default and makes 
+ it visible when focused
+ **************************************/
+
+.skip-link {
+    position: absolute;
+    /* I asked AI how to hide the skip link at first. It suggested setting top to a negative value to move it up above the screen, so it disappears. */
+    top: -4rem;
+    left: 1rem;
+    /* I asked AI how to make the skip link visible during keyboard navigation. It suggested adding z-index so the skip link floats on top when it overlaps other elements. */
+    z-index: 100;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    font-weight: bold;
+    text-decoration: none;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}

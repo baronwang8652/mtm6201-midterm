@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Coffee House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip link for accessibility who uses keyboard only -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+   
+    <header class="header">
+        <div class="wrapper header-inner">
+            <a href="#" class="logo">
+                <img src="images/my-coffee-shop-logo.svg" alt="My Coffee House home">
+            </a>
+            <!-- add aria-label for accessibility because the screen reader will read the nav label -->
+            <nav aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- this is hero section. add aria-labelledby to the section and id to the heading for accessibility -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="wrapper">
+                <h1 id="hero-title">Experience coffee like never before</h1>
+                <p>We craft more than beverages; we curate memories, one flavorful moment at a time. Embrace the aroma and let every visit be a chapter in your coffee story.</p>
+                <!-- use hyper link to navigate to the menu section -->
+                <a href="#menu" class="btn-light">Explore our menu</a>
+            </div>
+        </section>
+
+        <!-- this is welcome section. add aria-labelledby to the section and id to the heading for accessibility -->
+        <section class="welcome" aria-labelledby="welcome-title">
+            <div class="wrapper">
+                <p class="eyebrow">Welcome to My Coffee House</p>
+                <h2 id="welcome-title">Experience a new way to taste coffee</h2>
+                <!-- this is gallery section. includes one big image and four smaller images -->
+                <div class="gallery">
+                    <img src="images/latte.jpeg" alt="latte" class="gallery-main">
+                    <img src="images/coffee-beans.jpeg" alt="the coffee beans">
+                    <img src="images/pouring-coffee.jpeg" alt="the pouring coffee">
+                    <img src="images/three-cups.jpeg" alt="the three cups">
+                    <img src="images/smiling-employee.jpeg" alt="a smiling employee">
+                </div>
+            </div>
+        </section>
+
+        <!-- this is features section. add aria-labelledby to the section and id to the heading for accessibility -->
+        <section class="features" aria-labelledby="features-title">
+            <div class="wrapper">
+                <p class="eyebrow">What we offer</p>
+                <h2 id="features-title">Why visit us?</h2>
+                <!-- use list to display features -->
+                <ul class="features-list">
+                    <!-- the first feature put img>alt="" because screen reader will announce the h3 so don't need to read the image again -->
+                    <li class="feature">
+                        <img src="images/fair-trade.svg" alt="">
+                        <h3>Fair Trade Coffee</h3>
+                        <p>We build direct relationships with the farmers and producers who help in the development of delicious, sustainable and organic coffee.</p>
+                    </li>
+                    <!-- the second feature-->
+                    <li class="feature">
+                        <img src="images/local-baked-goods.svg" alt="">
+                        <h3>Local baked goods</h3>
+                        <p>We use local products to bake our goods and bring in a variety of treats from local bakers with our community.</p>
+                    </li>
+                    <!-- the third feature -->
+                    <li class="feature">
+                        <img src="images/made-with-love.svg" alt="">
+                        <h3>Made with love</h3>
+                        <p>We value our customers and make it our priority to serve everyone with respect and a friendly smile to start their day of right.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- this is banner section. add aria-label to the section for accessibility. PS not aria-labelledby because there is no single heading that labels the entire section -->
+        <section class="banner" aria-label="Menu and locations">
+            <div class="wrapper banner-inner">
+                <!-- this is menu section. add eyebrow, h2 and a button to navigate to the menu page -->
+                <div class="banner-block" id="menu">
+                    <p class="eyebrow">Our Menu</p>
+                    <h2>Explore what we have to offer you</h2>
+                    <a href="#" class="btn-light">Explore our menu</a>
+                </div>
+
+                <!-- this is locations section. add eyebrow, h2 and a button to navigate to the locations page -->
+                <div class="banner-block" id="locations">
+                    <p class="eyebrow">Locations</p>
+                    <h2>Find your nearest coffee shop</h2>
+                    <a href="#" class="btn-outline">View Locations</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- this is about section. add aria-labelledby to the section and id to the heading for accessibility -->
+        <section class="about" id="about" aria-labelledby="about-title">
+            <div class="wrapper about-inner">
+                <img src="images/about-us.jpeg" alt="about us" class="about-img">
+                <!-- div for text-->
+                <div class="about-text">
+                    <p class="eyebrow">About Us</p>
+                    <h2 id="about-title">Read our story</h2>
+                    <p>In the heart of our community, My Coffee House emerged as a humble local coffee shop that sought to redefine the coffee experience. Founded with a passion for quality brews and a commitment to fostering genuine connections, we embarked on this journey with a vision to create a warm and inviting space for coffee enthusiasts and casual patrons alike.</p>
+                    <p>My Coffee House quickly became a cherished gathering spot, where the rich aroma of freshly ground coffee beans mingled with the laughter of friends and the tapping of keyboards from those seeking a cozy workspace.</p>
+                    <a href="#" class="btn-dark">Learn more</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- this is testimonials section. add aria-labelledby to the section and id to the heading for accessibility -->
+        <section class="testimonials" aria-labelledby="testimonials-title">
+            <div class="wrapper">
+                <p class="eyebrow">Testimonials</p>
+                <h2 id="testimonials-title">What our customers say about us</h2>
+                <!-- use list to display testimonials -->
+                <ul class="testimonials-list">
+                    <li class="testimonial testimonial-first">
+                        <blockquote class="blockquote">
+                            "I always make a point to visit My Coffee Company when in Ottawa. Delicious coffee and friendly service."
+                        </blockquote>
+                        <p class="testimonial-name">Jane D., Toronto</p>
+                    </li>
+                    <li class="testimonial testimonial-second">
+                        <blockquote class="blockquote">
+                            "Great atmosphere to get some work done while enjoying a cup or two of incredible coffee."
+                        </blockquote>
+                        <p class="testimonial-name">Scott S., Ottawa</p>
+                    </li>
+                    <li class="testimonial testimonial-third">
+                        <blockquote class="blockquote">
+                            "Best coffee in Ottawa and the service is top notch. Would highly recommend a visit."
+                        </blockquote>
+                        <p class="testimonial-name">Susie F., Ottawa</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- this is footer section.-->
+    <footer class="footer">  
+        <div class="wrapper">
+            <p>&copy; My Coffee Company 2024</p>
+        </div>
+    </footer>
+</body>
+</html>
